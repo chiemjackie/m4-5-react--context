@@ -10,6 +10,5 @@ ReactDOM.render(
   <GameProvider>
     <App />
   </GameProvider>,
-
   rootElement
 );
