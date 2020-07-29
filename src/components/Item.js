@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Item = ({
@@ -9,9 +9,9 @@ const Item = ({
   numOwned,
   handleAttemptedPurchase,
 }) => {
-  const ref = useRef(null);
+  const ref = React.useRef(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (index === 0) {
       ref.current.focus();
     }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import GlobalStyles from "./GlobalStyles";
@@ -7,13 +7,16 @@ import Game from "./Game";
 import usePersistedState from "../hooks/usePersistedState.hook";
 
 function App() {
-  const [numCookies, setNumCookies] = usePersistedState("numCookies", 1000);
+  const [numCookies, setNumCookies] = usePersistedState(1000, "numCookies");
 
-  const [purchasedItems, setPurchasedItems] = useState({
-    cursor: 0,
-    grandma: 0,
-    farm: 0,
-  });
+  const [purchasedItems, setPurchasedItems] = usePersistedState(
+    {
+      cursor: 0,
+      grandma: 0,
+      farm: 0,
+    },
+    "purchasedItems"
+  );
 
   return (
     <>
